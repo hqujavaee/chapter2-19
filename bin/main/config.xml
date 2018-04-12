@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="kFC" class="cn.edu.hqu.javaee.domain.Dessert.impl.KFC"></bean>
+	<bean id="child" class="cn.edu.hqu.javaee.domain.Dessert.impl.Child"
+		scope="prototype">
+	<property name="iceCream" ref="iceCream"/>
+	<property name="container" ref="kFC"/>
+	</bean>
+	<bean id="iceCream"
+		class="cn.edu.hqu.javaee.domain.Dessert.impl.IceCream"
+		scope="prototype">
+	</bean>
+</beans>
